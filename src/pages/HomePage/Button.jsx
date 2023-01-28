@@ -1,9 +1,25 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteItemFromCart, setItemInCart } from "../../redux/cart/reducer";
 
-const Button = ({ price }) => {
+const Button = ({ game }) => {
+  const items = useSelector((state) => state.cart.itemsInCart);
+  const isItem = items.some((el) => el.id === game.id);
+  const dispatch = useDispatch();
+  const handleClick = (e) => {
+    e.stopPropagation();
+    if (isItem) {
+      dispatch(deleteItemFromCart(game.id));
+    } else {
+      dispatch(setItemInCart(game));
+    }
+  };
   return (
-    <button className="btn-buy text-sm absolute right-0 bottom-0 rounded-[15px] text-white border-none p-2">
-      Купить {price} руб.
+    <button
+      onClick={handleClick}
+      className="btn-buy text-sm absolute right-0 bottom-0 rounded-[15px] text-white border-none p-2"
+    >
+      {isItem ? "Удалить из корзины" : `Купить ${game.price} руб.`}
     </button>
   );
 };

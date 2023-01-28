@@ -18,3 +18,9 @@ body {
     padding: 3px 5px;
     font-size: 13px;
 }
+.cart-menu {
+    background: rgb(36,37,41);
+    padding: 10px 20px;
+    width: 400px;
+    z-index: 2;
+}

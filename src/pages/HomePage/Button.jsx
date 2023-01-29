@@ -17,7 +17,7 @@ const Button = ({ game }) => {
   return (
     <button
       onClick={handleClick}
-      className="btn-buy text-sm absolute right-0 bottom-0 rounded-[15px] text-white border-none p-2"
+      className="btn-buy text-sm absolute right-2 -bottom-5 rounded-[15px] text-white border-none p-2"
     >
       {isItem ? "Удалить из корзины" : `Купить ${game.price} руб.`}
     </button>

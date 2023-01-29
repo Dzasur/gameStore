@@ -21,6 +21,6 @@ body {
 .cart-menu {
     background: rgb(36,37,41);
     padding: 10px 20px;
-    width: 400px;
+    width: 300px;
     z-index: 2;
 }
